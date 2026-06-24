@@ -2,9 +2,9 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
 import { S as ArrowLeft, u as MapPin, v as Check } from "../_libs/lucide-react.mjs";
-import { l as propertyBySlugQuery } from "./queries-DCUD9o6-.mjs";
-import { t as Route } from "./properties._slug-CIA7FLDd.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/properties._slug-Cv8Y9JbK.js
+import { l as propertyBySlugQuery } from "./queries-FsIT87cM.mjs";
+import { t as Route } from "./properties._slug-Jmo0uAKw.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/properties._slug-BjveZMGa.js
 var import_jsx_runtime = require_jsx_runtime();
 function PropertyDetail() {
 	const { data: property } = useSuspenseQuery(propertyBySlugQuery(Route.useParams().slug));

@@ -33,6 +33,10 @@ Since you are uploading the code manually, follow these commands in your project
    ```bash
    git remote add origin https://github.com/your-username/your-repo-name.git
    ```
+   *Note: If you get an error saying `error: remote origin already exists.`, it means a remote link is already configured. Update it to your new repository URL instead by running:*
+   ```bash
+   git remote set-url origin https://github.com/your-username/your-repo-name.git
+   ```
 
 6. **Push the code to GitHub:**
    ```bash
@@ -77,15 +81,16 @@ After importing, Vercel will present the **Configure Project** screen. Set up th
    - **Build Command:** `npm run build` (Default)
    - **Output Directory:** `.vercel/output` (Default)
 
-5. **Environment Variables:**
-   *This is crucial if your project uses Supabase or any external APIs.*
-   - Expand the **"Environment Variables"** section.
-   - Add the following keys and their respective values (copy them from your local `.env` file):
-     - `VITE_SUPABASE_URL` (Supabase API URL)
-     - `VITE_SUPABASE_PUBLISHABLE_KEY` (Supabase Publishable Key)
-     - `SUPABASE_URL` (Server-side Supabase URL)
-     - `SUPABASE_PUBLISHABLE_KEY` (Server-side Supabase Publishable Key)
-     - `SUPABASE_SERVICE_ROLE_KEY` (Server-side Supabase Service Role Key)
+5. **Environment Variables (Optional for Demo):**
+   - **For a Demo Deployment:** You can skip adding environment variables. The project is configured to bypass missing database credentials, log a console warning, and fall back to dummy credentials. The static pages and UI will load and work exactly like `localhost` (without real database capabilities).
+   - **For a Production Deployment (with Database):**
+     - Expand the **"Environment Variables"** section.
+     - Add the following keys and values matching your Supabase project credentials:
+       - `VITE_SUPABASE_URL`
+       - `VITE_SUPABASE_PUBLISHABLE_KEY`
+       - `SUPABASE_URL`
+       - `SUPABASE_PUBLISHABLE_KEY`
+       - `SUPABASE_SERVICE_ROLE_KEY`
 
 ---
 

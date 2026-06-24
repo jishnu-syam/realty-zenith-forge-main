@@ -1,7 +1,7 @@
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
-import { o as galleryQuery } from "./queries-DCUD9o6-.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/gallery-YDQZAWdr.js
+import { o as galleryQuery } from "./queries-FsIT87cM.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/gallery-DtDYFVQJ.js
 var import_jsx_runtime = require_jsx_runtime();
 function GalleryPage() {
 	const { data: images } = useSuspenseQuery(galleryQuery);

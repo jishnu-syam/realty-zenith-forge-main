@@ -42,9 +42,11 @@ export const requireSupabaseAuth = createMiddleware({ type: 'function' }).server
         ...(!SUPABASE_PUBLISHABLE_KEY ? ['SUPABASE_PUBLISHABLE_KEY'] : []),
       ];
       const message = `Missing Supabase environment variable(s): ${missing.join(', ')}. Please verify your Supabase configuration and environment variables.`;
-      console.error(`[Supabase] ${message}`);
-      throw new Error(message);
+      console.warn(`[Supabase Auth Middleware] ${message} (Using dummy placeholders for demo)`);
     }
+
+    const finalUrl = SUPABASE_URL || 'https://placeholder.supabase.co';
+    const finalKey = SUPABASE_PUBLISHABLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy';
     
     const request = getRequest();
 
@@ -72,11 +74,11 @@ export const requireSupabaseAuth = createMiddleware({ type: 'function' }).server
     }
 
     const supabase = createClient<Database>(
-      SUPABASE_URL!,
-      SUPABASE_PUBLISHABLE_KEY!,
+      finalUrl,
+      finalKey,
       {
         global: {
-          fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY!),
+          fetch: createSupabaseFetch(finalKey),
           headers: {
             Authorization: `Bearer ${token}`,
           },

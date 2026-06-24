@@ -1,9 +1,9 @@
 import { j as notFound, m as createFileRoute, p as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
-import { n as blogBySlugQuery } from "./queries-DCUD9o6-.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/blog._slug-D9tB8o24.js
+import { n as blogBySlugQuery } from "./queries-FsIT87cM.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/blog._slug-Dtxeb1PJ.js
 var $$splitErrorComponentImporter = () => import("./blog._slug-MRJR02wb.mjs");
 var $$splitNotFoundComponentImporter = () => import("./blog._slug-DqD0BzA8.mjs");
-var $$splitComponentImporter = () => import("./blog._slug-O7wEAG_Y.mjs");
+var $$splitComponentImporter = () => import("./blog._slug-DAhjKZVt.mjs");
 var Route = createFileRoute("/blog/$slug")({
 	head: ({ params }) => ({
 		meta: [

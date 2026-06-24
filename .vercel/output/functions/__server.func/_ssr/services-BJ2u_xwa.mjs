@@ -2,8 +2,8 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
 import { T as ChartLine, p as Compass, r as ShieldCheck, u as MapPin, w as Layers, x as ArrowRight, y as Building2 } from "../_libs/lucide-react.mjs";
-import { u as servicesQuery } from "./queries-DCUD9o6-.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services-CDnN0BcO.js
+import { u as servicesQuery } from "./queries-FsIT87cM.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/services-BJ2u_xwa.js
 var import_jsx_runtime = require_jsx_runtime();
 var ICONS = {
 	MapPin,

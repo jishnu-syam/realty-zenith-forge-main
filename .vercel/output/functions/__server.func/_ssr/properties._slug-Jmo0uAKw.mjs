@@ -1,9 +1,9 @@
 import { j as notFound, m as createFileRoute, p as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
-import { l as propertyBySlugQuery } from "./queries-DCUD9o6-.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/properties._slug-CIA7FLDd.js
+import { l as propertyBySlugQuery } from "./queries-FsIT87cM.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/properties._slug-Jmo0uAKw.js
 var $$splitErrorComponentImporter = () => import("./properties._slug-c1SKETX3.mjs");
 var $$splitNotFoundComponentImporter = () => import("./properties._slug-C55tF4_m.mjs");
-var $$splitComponentImporter = () => import("./properties._slug-Cv8Y9JbK.mjs");
+var $$splitComponentImporter = () => import("./properties._slug-BjveZMGa.mjs");
 var Route = createFileRoute("/properties/$slug")({
 	head: ({ params }) => ({
 		meta: [{ title: `Plot ${params.slug} — Capital Realty` }, {

@@ -2,15 +2,15 @@ import { r as __toESM } from "../_runtime.mjs";
 import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { I as useRouter, O as redirect, c as HeadContent, d as createRouter, f as Outlet, g as Link, h as createRootRouteWithContext, l as useRouterState, m as createFileRoute, p as lazyRouteComponent, s as Scripts } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
-import { t as supabase } from "./client-uDyzgJZQ.mjs";
+import { t as supabase } from "./client-By7Wti3p.mjs";
 import { n as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { a as QueryClientProvider, i as useQuery } from "../_libs/tanstack__react-query.mjs";
 import { l as Menu, t as X } from "../_libs/lucide-react.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-import { a as featuredPropertiesQuery, c as propertiesQuery, d as siteSettingsQuery, f as testimonialsQuery, i as faqsQuery, o as galleryQuery, r as blogQuery, s as heroSlidesQuery, t as areasQuery, u as servicesQuery } from "./queries-DCUD9o6-.mjs";
-import { t as Route$16 } from "./blog._slug-D9tB8o24.mjs";
-import { t as Route$17 } from "./properties._slug-CIA7FLDd.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DkJ70afU.js
+import { a as featuredPropertiesQuery, c as propertiesQuery, d as siteSettingsQuery, f as testimonialsQuery, i as faqsQuery, o as galleryQuery, r as blogQuery, s as heroSlidesQuery, t as areasQuery, u as servicesQuery } from "./queries-FsIT87cM.mjs";
+import { t as Route$16 } from "./blog._slug-Dtxeb1PJ.mjs";
+import { t as Route$17 } from "./properties._slug-Jmo0uAKw.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BqfHWDuJ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-C-owL_q3.css";
@@ -498,7 +498,7 @@ var Route$14 = createFileRoute("/sitemap.xml")({ server: { handlers: { GET: asyn
 		"Cache-Control": "public, max-age=3600"
 	} });
 } } } });
-var $$splitComponentImporter$13 = () => import("./services-CDnN0BcO.mjs");
+var $$splitComponentImporter$13 = () => import("./services-BJ2u_xwa.mjs");
 var Route$13 = createFileRoute("/services")({
 	head: () => ({
 		meta: [
@@ -526,7 +526,7 @@ var Route$13 = createFileRoute("/services")({
 });
 var $$splitComponentImporter$12 = () => import("./properties-Cv1DRjK4.mjs");
 var Route$12 = createFileRoute("/properties")({ component: lazyRouteComponent($$splitComponentImporter$12, "component") });
-var $$splitComponentImporter$11 = () => import("./gallery-YDQZAWdr.mjs");
+var $$splitComponentImporter$11 = () => import("./gallery-DtDYFVQJ.mjs");
 var Route$11 = createFileRoute("/gallery")({
 	head: () => ({
 		meta: [
@@ -552,7 +552,7 @@ var Route$11 = createFileRoute("/gallery")({
 	loader: ({ context }) => context.queryClient.ensureQueryData(galleryQuery),
 	component: lazyRouteComponent($$splitComponentImporter$11, "component")
 });
-var $$splitComponentImporter$10 = () => import("./faq-CsbF2jRt.mjs");
+var $$splitComponentImporter$10 = () => import("./faq-CTWWv53m.mjs");
 var Route$10 = createFileRoute("/faq")({
 	head: () => ({
 		meta: [
@@ -578,7 +578,7 @@ var Route$10 = createFileRoute("/faq")({
 	loader: ({ context }) => context.queryClient.ensureQueryData(faqsQuery),
 	component: lazyRouteComponent($$splitComponentImporter$10, "component")
 });
-var $$splitComponentImporter$9 = () => import("./contact-DEzRK7BC.mjs");
+var $$splitComponentImporter$9 = () => import("./contact-C4lM2BeM.mjs");
 var Route$9 = createFileRoute("/contact")({
 	head: () => ({
 		meta: [
@@ -606,7 +606,7 @@ var Route$9 = createFileRoute("/contact")({
 });
 var $$splitComponentImporter$8 = () => import("./blog-GHsbigBI.mjs");
 var Route$8 = createFileRoute("/blog")({ component: lazyRouteComponent($$splitComponentImporter$8, "component") });
-var $$splitComponentImporter$7 = () => import("./auth-RfVvtkgy.mjs");
+var $$splitComponentImporter$7 = () => import("./auth-DfiQ1BkP.mjs");
 var Route$7 = createFileRoute("/auth")({
 	head: () => ({ meta: [{ title: "Staff Sign In — Capital Realty" }, {
 		name: "robots",
@@ -619,7 +619,7 @@ var Route$7 = createFileRoute("/auth")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$7, "component")
 });
-var $$splitComponentImporter$6 = () => import("./areas-0oWMgCRu.mjs");
+var $$splitComponentImporter$6 = () => import("./areas-TWgKflzt.mjs");
 var Route$6 = createFileRoute("/areas")({
 	head: () => ({
 		meta: [
@@ -681,7 +681,7 @@ var Route$4 = createFileRoute("/_authenticated")({
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
 var $$splitErrorComponentImporter = () => import("./routes-aL1W3kml.mjs");
-var $$splitComponentImporter$3 = () => import("./routes-D8ikBggz.mjs");
+var $$splitComponentImporter$3 = () => import("./routes-DC6guwqB.mjs");
 var Route$3 = createFileRoute("/")({
 	head: () => ({
 		meta: [
@@ -720,7 +720,7 @@ var Route$3 = createFileRoute("/")({
 	component: lazyRouteComponent($$splitComponentImporter$3, "component"),
 	errorComponent: lazyRouteComponent($$splitErrorComponentImporter, "errorComponent")
 });
-var $$splitComponentImporter$2 = () => import("./properties.index-2K6cxMci.mjs");
+var $$splitComponentImporter$2 = () => import("./properties.index-D5h75y0H.mjs");
 var Route$2 = createFileRoute("/properties/")({
 	head: () => ({
 		meta: [
@@ -746,7 +746,7 @@ var Route$2 = createFileRoute("/properties/")({
 	loader: ({ context }) => context.queryClient.ensureQueryData(propertiesQuery),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./blog.index-c6brNWmr.mjs");
+var $$splitComponentImporter$1 = () => import("./blog.index-DBjOdpd5.mjs");
 var Route$1 = createFileRoute("/blog/")({
 	head: () => ({
 		meta: [
@@ -772,7 +772,7 @@ var Route$1 = createFileRoute("/blog/")({
 	loader: ({ context }) => context.queryClient.ensureQueryData(blogQuery),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./admin-D6DE5jEX.mjs");
+var $$splitComponentImporter = () => import("./admin-BL-AF0cK.mjs");
 var Route = createFileRoute("/_authenticated/admin")({
 	head: () => ({ meta: [{ title: "Admin — Capital Realty" }, {
 		name: "robots",

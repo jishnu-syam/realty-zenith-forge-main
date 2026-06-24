@@ -1,6 +1,6 @@
-import { t as supabase } from "./client-uDyzgJZQ.mjs";
+import { t as supabase } from "./client-By7Wti3p.mjs";
 import { n as queryOptions } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/queries-DCUD9o6-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/queries-FsIT87cM.js
 async function fetchOrThrow(p) {
 	const { data, error } = await p;
 	if (error) throw new Error(error.message);

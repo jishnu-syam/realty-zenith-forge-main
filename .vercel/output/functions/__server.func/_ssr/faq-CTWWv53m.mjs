@@ -2,10 +2,10 @@ import { r as __toESM } from "../_runtime.mjs";
 import { a as Trigger2, c as require_react, i as Root2, n as Header, r as Item, s as require_jsx_runtime, t as Content2 } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
 import { _ as ChevronDown } from "../_libs/lucide-react.mjs";
-import { i as faqsQuery } from "./queries-DCUD9o6-.mjs";
+import { i as faqsQuery } from "./queries-FsIT87cM.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/faq-CsbF2jRt.js
+//#region node_modules/.nitro/vite/services/ssr/assets/faq-CTWWv53m.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function cn(...inputs) {

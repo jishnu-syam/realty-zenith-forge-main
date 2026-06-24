@@ -3,9 +3,9 @@ import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
 import { T as ChartLine, g as ChevronLeft, h as ChevronRight, o as Quote, p as Compass, r as ShieldCheck, u as MapPin, w as Layers, x as ArrowRight, y as Building2 } from "../_libs/lucide-react.mjs";
-import { a as featuredPropertiesQuery, f as testimonialsQuery, r as blogQuery, s as heroSlidesQuery, t as areasQuery, u as servicesQuery } from "./queries-DCUD9o6-.mjs";
+import { a as featuredPropertiesQuery, f as testimonialsQuery, r as blogQuery, s as heroSlidesQuery, t as areasQuery, u as servicesQuery } from "./queries-FsIT87cM.mjs";
 import { t as PropertyCard } from "./PropertyCard-B1pWci9y.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-D8ikBggz.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DC6guwqB.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function HeroCarousel({ slides }) {

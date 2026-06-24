@@ -2,9 +2,9 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
 import { S as ArrowLeft } from "../_libs/lucide-react.mjs";
-import { n as blogBySlugQuery } from "./queries-DCUD9o6-.mjs";
-import { t as Route } from "./blog._slug-D9tB8o24.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/blog._slug-O7wEAG_Y.js
+import { n as blogBySlugQuery } from "./queries-FsIT87cM.mjs";
+import { t as Route } from "./blog._slug-Dtxeb1PJ.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/blog._slug-DAhjKZVt.js
 var import_jsx_runtime = require_jsx_runtime();
 function BlogPost() {
 	const { data: post } = useSuspenseQuery(blogBySlugQuery(Route.useParams().slug));
