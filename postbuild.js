@@ -1,50 +1,63 @@
 import fs from "fs";
 import path from "path";
 
-function copyFolderSync(from, to) {
-  if (!fs.existsSync(from)) return;
-  if (!fs.existsSync(to)) {
-    fs.mkdirSync(to, { recursive: true });
+// 1. Vendor tslib.es6.mjs into _libs/tslib.mjs
+const srcTslibMjs = path.join(process.cwd(), "node_modules", "tslib", "tslib.es6.mjs");
+const destTslibDir = path.join(
+  process.cwd(),
+  ".vercel",
+  "output",
+  "functions",
+  "__server.func",
+  "_libs"
+);
+const destTslibMjs = path.join(destTslibDir, "tslib.mjs");
+
+if (fs.existsSync(srcTslibMjs)) {
+  if (!fs.existsSync(destTslibDir)) {
+    fs.mkdirSync(destTslibDir, { recursive: true });
   }
-  fs.readdirSync(from).forEach((element) => {
-    const stat = fs.lstatSync(path.join(from, element));
-    if (stat.isFile()) {
-      fs.copyFileSync(path.join(from, element), path.join(to, element));
-    } else if (stat.isDirectory()) {
-      copyFolderSync(path.join(from, element), path.join(to, element));
+  fs.copyFileSync(srcTslibMjs, destTslibMjs);
+  console.log("[postbuild] Vendored tslib.es6.mjs into _libs/tslib.mjs.");
+} else {
+  console.warn("[postbuild] Source tslib.es6.mjs not found in node_modules/tslib.");
+}
+
+// 2. Recursively find and rewrite tslib imports in all .mjs files inside the function folder
+const funcDir = path.join(
+  process.cwd(),
+  ".vercel",
+  "output",
+  "functions",
+  "__server.func"
+);
+
+function rewriteTslibImports(dir) {
+  if (!fs.existsSync(dir)) return;
+  fs.readdirSync(dir).forEach((element) => {
+    const fullPath = path.join(dir, element);
+    const stat = fs.lstatSync(fullPath);
+    if (stat.isDirectory()) {
+      rewriteTslibImports(fullPath);
+    } else if (stat.isFile() && element.endsWith(".mjs")) {
+      let content = fs.readFileSync(fullPath, "utf8");
+      if (content.includes('from "tslib"') || content.includes("from 'tslib'")) {
+        const relativePath = path.relative(path.dirname(fullPath), destTslibMjs).replace(/\\/g, '/');
+        const importPath = relativePath.startsWith('.') ? relativePath : './' + relativePath;
+        
+        content = content.replace(/from\s+["']tslib["']/g, `from "${importPath}"`);
+        fs.writeFileSync(fullPath, content, "utf8");
+        console.log(`[postbuild] Rewrote tslib import in ${path.relative(process.cwd(), fullPath)} -> ${importPath}`);
+      }
     }
   });
 }
 
-// 1. Copy the full tslib package into the built function output
-const srcDir = path.join(process.cwd(), "node_modules", "tslib");
-const destDir = path.join(
-  process.cwd(),
-  ".vercel",
-  "output",
-  "functions",
-  "__server.func",
-  "node_modules",
-  "tslib"
-);
+rewriteTslibImports(funcDir);
 
-if (fs.existsSync(srcDir)) {
-  copyFolderSync(srcDir, destDir);
-  console.log("[postbuild] Copied entire tslib module to built output node_modules.");
-} else {
-  console.warn("[postbuild] Source tslib module not found in node_modules.");
-}
-
-// 2. Clear the dependencies block in the built function's package.json
+// 3. Clear the dependencies block in the built function's package.json
 // This forces Vercel's deployment builder to trace and upload all files instead of skipping them.
-const funcPackageJson = path.join(
-  process.cwd(),
-  ".vercel",
-  "output",
-  "functions",
-  "__server.func",
-  "package.json"
-);
+const funcPackageJson = path.join(funcDir, "package.json");
 
 if (fs.existsSync(funcPackageJson)) {
   try {
@@ -59,3 +72,4 @@ if (fs.existsSync(funcPackageJson)) {
     console.error("[postbuild] Failed to process built package.json:", err);
   }
 }
+
