@@ -8,16 +8,30 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const supabase = createClient(
-          process.env.SUPABASE_URL!,
-          process.env.SUPABASE_PUBLISHABLE_KEY!,
-          { auth: { storage: undefined, persistSession: false, autoRefreshToken: false } },
-        );
+        let props: { slug: string; updated_at: string }[] = [];
+        let posts: { slug: string; updated_at: string }[] = [];
 
-        const [{ data: props }, { data: posts }] = await Promise.all([
-          supabase.from("properties").select("slug, updated_at").eq("published", true),
-          supabase.from("blog_posts").select("slug, updated_at").eq("published", true),
-        ]);
+        const url = process.env.SUPABASE_URL;
+        const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+
+        if (url && key) {
+          try {
+            const supabase = createClient(
+              url,
+              key,
+              { auth: { storage: undefined, persistSession: false, autoRefreshToken: false } },
+            );
+
+            const [{ data: propsData }, { data: postsData }] = await Promise.all([
+              supabase.from("properties").select("slug, updated_at").eq("published", true),
+              supabase.from("blog_posts").select("slug, updated_at").eq("published", true),
+            ]);
+            props = (propsData ?? []) as never;
+            posts = (postsData ?? []) as never;
+          } catch (e) {
+            console.warn("Failed to fetch sitemap entries from database:", e);
+          }
+        }
 
         const statics = ["/", "/about", "/services", "/properties", "/areas", "/gallery", "/faq", "/blog", "/contact"];
         const urls: { loc: string; lastmod?: string }[] = statics.map((p) => ({ loc: p }));

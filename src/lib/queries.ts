@@ -13,9 +13,17 @@ import type {
 } from "./types";
 
 async function fetchOrThrow<T>(p: Promise<{ data: T | null; error: { message: string } | null }>) {
-  const { data, error } = await p;
-  if (error) throw new Error(error.message);
-  return (data ?? []) as T;
+  try {
+    const { data, error } = await p;
+    if (error) {
+      console.warn(`[Supabase Fetch Warning] ${error.message}`);
+      return [] as unknown as T;
+    }
+    return (data ?? []) as T;
+  } catch (err) {
+    console.warn(`[Supabase Connection Warning]`, err);
+    return [] as unknown as T;
+  }
 }
 
 export const heroSlidesQuery = queryOptions({
@@ -59,14 +67,19 @@ export function propertyBySlugQuery(slug: string) {
   return queryOptions({
     queryKey: ["properties", slug],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("properties")
-        .select("*")
-        .eq("slug", slug)
-        .eq("published", true)
-        .maybeSingle();
-      if (error) throw new Error(error.message);
-      return data as Property | null;
+      try {
+        const { data, error } = await supabase
+          .from("properties")
+          .select("*")
+          .eq("slug", slug)
+          .eq("published", true)
+          .maybeSingle();
+        if (error) throw new Error(error.message);
+        return data as Property | null;
+      } catch (err) {
+        console.warn(`[Supabase Query Warning] propertyBySlugQuery failed`, err);
+        return null;
+      }
     },
   });
 }
@@ -119,14 +132,19 @@ export function blogBySlugQuery(slug: string) {
   return queryOptions({
     queryKey: ["blog", slug],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("blog_posts")
-        .select("*")
-        .eq("slug", slug)
-        .eq("published", true)
-        .maybeSingle();
-      if (error) throw new Error(error.message);
-      return data as BlogPost | null;
+      try {
+        const { data, error } = await supabase
+          .from("blog_posts")
+          .select("*")
+          .eq("slug", slug)
+          .eq("published", true)
+          .maybeSingle();
+        if (error) throw new Error(error.message);
+        return data as BlogPost | null;
+      } catch (err) {
+        console.warn(`[Supabase Query Warning] blogBySlugQuery failed`, err);
+        return null;
+      }
     },
   });
 }
@@ -134,12 +152,17 @@ export function blogBySlugQuery(slug: string) {
 export const siteSettingsQuery = queryOptions({
   queryKey: ["site_settings"],
   queryFn: async () => {
-    const { data, error } = await supabase.from("site_settings").select("id, value");
-    if (error) throw new Error(error.message);
-    const out: Record<string, SiteSettingValue> = {};
-    (data ?? []).forEach((row: { id: string; value: unknown }) => {
-      out[row.id] = (row.value as SiteSettingValue) ?? {};
-    });
-    return out;
+    try {
+      const { data, error } = await supabase.from("site_settings").select("id, value");
+      if (error) throw new Error(error.message);
+      const out: Record<string, SiteSettingValue> = {};
+      (data ?? []).forEach((row: { id: string; value: unknown }) => {
+        out[row.id] = (row.value as SiteSettingValue) ?? {};
+      });
+      return out;
+    } catch (err) {
+      console.warn(`[Supabase Query Warning] siteSettingsQuery failed`, err);
+      return {};
+    }
   },
 });
