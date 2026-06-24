@@ -1,0 +1,187 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Capital Realty design system — premium real estate.
+ * Palette: deep navy, ivory, soft gray, refined gold.
+ * Typography: Playfair Display (serif display) + Inter (sans body).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand-specific tokens */
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ivory: var(--ivory);
+  --color-mist: var(--mist);
+
+  --shadow-elegant: 0 30px 60px -30px color-mix(in oklab, var(--navy) 35%, transparent);
+  --shadow-card: 0 12px 32px -16px color-mix(in oklab, var(--navy) 22%, transparent);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand */
+  --navy: oklch(0.21 0.04 260);
+  --navy-soft: oklch(0.27 0.04 260);
+  --gold: oklch(0.72 0.11 80);
+  --gold-soft: oklch(0.82 0.07 82);
+  --ivory: oklch(0.985 0.005 90);
+  --mist: oklch(0.96 0.005 250);
+
+  /* Shadcn semantic tokens — mapped to brand */
+  --background: oklch(1 0 0);
+  --foreground: var(--navy);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--navy);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--navy);
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.985 0.005 90);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--navy);
+  --muted: var(--mist);
+  --muted-foreground: oklch(0.5 0.02 260);
+  --accent: var(--gold);
+  --accent-foreground: var(--navy);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: var(--gold);
+  --chart-1: var(--navy);
+  --chart-2: var(--gold);
+  --chart-3: oklch(0.6 0.05 260);
+  --chart-4: oklch(0.75 0.08 80);
+  --chart-5: oklch(0.45 0.03 260);
+  --sidebar: var(--navy);
+  --sidebar-foreground: oklch(0.985 0.005 90);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--navy);
+  --sidebar-accent: oklch(0.27 0.04 260);
+  --sidebar-accent-foreground: oklch(0.985 0.005 90);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--gold) 35%, transparent);
+    color: var(--navy);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility section-padding {
+  padding-block: 6rem;
+  @media (min-width: 768px) {
+    padding-block: 8rem;
+  }
+}
+
+@utility container-wide {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility gold-rule {
+  display: block;
+  height: 1px;
+  width: 3rem;
+  background-color: var(--gold);
+}
+
+@utility hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slow-zoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.12); }
+}
+
+@utility animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@utility animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
+@utility animate-slow-zoom {
+  animation: slow-zoom 12s ease-out forwards;
+}
