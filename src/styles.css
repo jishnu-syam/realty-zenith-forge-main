@@ -40,62 +40,96 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand-specific tokens */
-  --color-navy: var(--navy);
-  --color-navy-soft: var(--navy-soft);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-ivory: var(--ivory);
-  --color-mist: var(--mist);
+  /* New Brand Colors */
+  --color-primary-green: var(--primary-green);
+  --color-secondary-green: var(--secondary-green);
+  --color-accent-green: var(--accent-green);
+  --color-dark-hover-green: var(--dark-hover-green);
+  --color-light-green-bg: var(--light-green-bg);
+  --color-cream-bg: var(--cream-bg);
+  --color-beige-bg: var(--beige-bg);
+  --color-white-card-bg: var(--white-card-bg);
+  --color-border-color: var(--border-color);
+  --color-primary-heading-text: var(--primary-heading-text);
+  --color-body-text: var(--body-text);
+  --color-secondary-text: var(--secondary-text);
+  --color-muted-text: var(--muted-text);
 
-  --shadow-elegant: 0 30px 60px -30px color-mix(in oklab, var(--navy) 35%, transparent);
-  --shadow-card: 0 12px 32px -16px color-mix(in oklab, var(--navy) 22%, transparent);
+  /* Fallbacks for backward compatibility / third party */
+  --color-navy: var(--primary-green);
+  --color-navy-soft: var(--dark-hover-green);
+  --color-gold: var(--accent-green);
+  --color-gold-soft: var(--secondary-green);
+  --color-ivory: var(--cream-bg);
+  --color-mist: var(--beige-bg);
+
+  --shadow-elegant: 0 30px 60px -30px color-mix(in oklab, var(--primary-green) 35%, transparent);
+  --shadow-card: 0 12px 32px -16px color-mix(in oklab, var(--primary-green) 22%, transparent);
 }
 
 :root {
   --radius: 0.25rem;
 
-  /* Brand */
-  --navy: oklch(0.21 0.04 260);
-  --navy-soft: oklch(0.27 0.04 260);
-  --gold: oklch(0.72 0.11 80);
-  --gold-soft: oklch(0.82 0.07 82);
-  --ivory: oklch(0.985 0.005 90);
-  --mist: oklch(0.96 0.005 250);
+  /* Brand Colors - Tropical Roots */
+  --primary-green: #2E5D34;
+  --secondary-green: #4F8A45;
+  --accent-green: #7AA95C;
+  --dark-hover-green: #24492A;
+
+  /* Background Colors */
+  --light-green-bg: #F3F8F0;
+  --cream-bg: #FAF8F2;
+  --beige-bg: #F5F1E8;
+  --white-card-bg: #FFFFFF;
+  --border-color: #E5E5E5;
+
+  /* Typography Colors */
+  --primary-heading-text: #1E2A1F;
+  --body-text: #4B4B4B;
+  --secondary-text: #6E6E6E;
+  --muted-text: #8A8A8A;
+
+  /* Backward Compatibility Aliases for CSS variables */
+  --navy: var(--primary-green);
+  --navy-soft: var(--dark-hover-green);
+  --gold: var(--accent-green);
+  --gold-soft: var(--secondary-green);
+  --ivory: var(--cream-bg);
+  --mist: var(--beige-bg);
 
   /* Shadcn semantic tokens — mapped to brand */
-  --background: oklch(1 0 0);
-  --foreground: var(--navy);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--navy);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--navy);
-  --primary: var(--navy);
-  --primary-foreground: oklch(0.985 0.005 90);
-  --secondary: var(--mist);
-  --secondary-foreground: var(--navy);
-  --muted: var(--mist);
-  --muted-foreground: oklch(0.5 0.02 260);
-  --accent: var(--gold);
-  --accent-foreground: var(--navy);
+  --background: var(--cream-bg);
+  --foreground: var(--primary-heading-text);
+  --card: var(--white-card-bg);
+  --card-foreground: var(--body-text);
+  --popover: var(--white-card-bg);
+  --popover-foreground: var(--primary-heading-text);
+  --primary: var(--primary-green);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--secondary-green);
+  --secondary-foreground: #FFFFFF;
+  --muted: var(--beige-bg);
+  --muted-foreground: var(--muted-text);
+  --accent: var(--accent-green);
+  --accent-foreground: var(--primary-heading-text);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.01 250);
-  --input: oklch(0.92 0.01 250);
-  --ring: var(--gold);
-  --chart-1: var(--navy);
-  --chart-2: var(--gold);
-  --chart-3: oklch(0.6 0.05 260);
-  --chart-4: oklch(0.75 0.08 80);
-  --chart-5: oklch(0.45 0.03 260);
-  --sidebar: var(--navy);
-  --sidebar-foreground: oklch(0.985 0.005 90);
-  --sidebar-primary: var(--gold);
-  --sidebar-primary-foreground: var(--navy);
-  --sidebar-accent: oklch(0.27 0.04 260);
-  --sidebar-accent-foreground: oklch(0.985 0.005 90);
-  --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: var(--gold);
+  --border: var(--border-color);
+  --input: var(--border-color);
+  --ring: var(--primary-green);
+  --chart-1: var(--primary-green);
+  --chart-2: var(--accent-green);
+  --chart-3: var(--secondary-green);
+  --chart-4: var(--dark-hover-green);
+  --chart-5: var(--muted-text);
+  --sidebar: var(--primary-green);
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: var(--accent-green);
+  --sidebar-primary-foreground: var(--primary-green);
+  --sidebar-accent: var(--secondary-green);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: var(--border-color);
+  --sidebar-ring: var(--primary-green);
 }
 
 @layer base {
@@ -118,8 +152,8 @@
     letter-spacing: -0.01em;
   }
   ::selection {
-    background-color: color-mix(in oklab, var(--gold) 35%, transparent);
-    color: var(--navy);
+    background-color: color-mix(in oklab, var(--accent-green) 35%, transparent);
+    color: var(--primary-heading-text);
   }
 }
 
@@ -129,7 +163,7 @@
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent-green);
 }
 
 @utility section-padding {
@@ -148,12 +182,21 @@
   }
 }
 
-@utility gold-rule {
+@utility green-rule {
   display: block;
   height: 1px;
   width: 3rem;
-  background-color: var(--gold);
+  background-color: var(--accent-green);
 }
+
+@utility bg-tropical-gradient {
+  background-image: linear-gradient(135deg, #2E5D34 0%, #4F8A45 45%, #7AA95C 100%);
+}
+
+@utility bg-light-gradient {
+  background-image: linear-gradient(180deg, #FAF8F2 0%, #F3F8F0 100%);
+}
+
 
 @utility hide-scrollbar {
   scrollbar-width: none;

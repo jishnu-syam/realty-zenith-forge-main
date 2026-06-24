@@ -20,11 +20,11 @@ function BlogIndex() {
   const { data: posts } = useSuspenseQuery(blogQuery);
   return (
     <>
-      <section className="pt-40 pb-16 bg-navy text-white">
+      <section className="pt-40 pb-16 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Insights & Research</span>
+          <span className="eyebrow text-accent-green">Insights & Research</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.05] max-w-3xl">
-            The long view on <span className="italic text-gold">Kerala land</span>.
+            The long view on <span className="italic text-accent-green">Kerala land</span>.
           </h1>
         </div>
       </section>
@@ -54,7 +54,7 @@ function BlogIndex() {
                   </div>
                 )}
                 {p.category && <span className="eyebrow mb-2 block">{p.category}</span>}
-                <h2 className="font-display text-2xl text-navy group-hover:text-gold transition-colors mb-2">
+                <h2 className="font-display text-2xl text-primary-heading-text group-hover:text-accent-green transition-colors mb-2">
                   {p.title}
                 </h2>
                 {p.excerpt && <p className="text-muted-foreground leading-relaxed">{p.excerpt}</p>}

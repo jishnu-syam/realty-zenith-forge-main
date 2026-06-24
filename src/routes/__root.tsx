@@ -21,13 +21,13 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <p className="eyebrow mb-4">404</p>
-        <h1 className="font-display text-5xl text-navy mb-3">Page not found</h1>
+        <h1 className="font-display text-5xl text-primary-heading-text mb-3">Page not found</h1>
         <p className="text-muted-foreground mb-8">
           The page you're looking for has moved or doesn't exist.
         </p>
         <Link
           to="/"
-          className="inline-flex items-center justify-center bg-navy text-white px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-colors"
+          className="inline-flex items-center justify-center bg-primary-green text-white px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-dark-hover-green hover:text-white transition-colors"
         >
           Return Home
         </Link>
@@ -44,7 +44,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <p className="eyebrow mb-4">Error</p>
-        <h1 className="font-display text-4xl text-navy mb-3">This page didn't load</h1>
+        <h1 className="font-display text-4xl text-primary-heading-text mb-3">This page didn't load</h1>
         <p className="text-muted-foreground mb-8">
           Something went wrong. Try refreshing or return home.
         </p>
@@ -54,13 +54,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex bg-navy text-white px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-colors"
+            className="inline-flex bg-primary-green text-white px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-dark-hover-green hover:text-white transition-colors"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex border border-navy/20 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-navy hover:text-white transition-colors"
+            className="inline-flex border border-primary-green/20 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-primary-green hover:text-white transition-colors"
           >
             Home
           </a>
@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Capital Realty" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#0F172A" },
+      { name: "theme-color", content: "#2E5D34" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

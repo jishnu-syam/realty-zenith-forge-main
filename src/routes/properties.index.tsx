@@ -21,11 +21,11 @@ function PropertiesPage() {
   const { data: properties } = useSuspenseQuery(propertiesQuery);
   return (
     <>
-      <section className="pt-40 pb-16 bg-navy text-white">
+      <section className="pt-40 pb-16 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Portfolio</span>
+          <span className="eyebrow text-accent-green">Portfolio</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.05] max-w-3xl">
-            Available <span className="italic text-gold">plots</span>.
+            Available <span className="italic text-accent-green">plots</span>.
           </h1>
           <p className="mt-8 text-lg text-white/70 max-w-2xl leading-relaxed">
             Every parcel in our portfolio is independently verified, site-prepared, and ready

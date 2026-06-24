@@ -21,7 +21,7 @@ export const Route = createFileRoute("/properties/$slug")({
     <div className="min-h-screen flex items-center justify-center text-center px-6 pt-20">
       <div>
         <h1 className="font-display text-4xl">Plot not found</h1>
-        <Link to="/properties" className="mt-6 inline-flex items-center gap-2 text-gold underline">
+        <Link to="/properties" className="mt-6 inline-flex items-center gap-2 text-accent-green underline">
           ← Back to portfolio
         </Link>
       </div>
@@ -45,14 +45,14 @@ function PropertyDetail() {
         <div className="container-wide">
           <Link
             to="/properties"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-gold mb-8"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-accent-green mb-8"
           >
             <ArrowLeft className="size-4" /> All Plots
           </Link>
         </div>
         <div className="container-wide grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8">
-            <div className="aspect-[4/3] overflow-hidden bg-mist">
+            <div className="aspect-[4/3] overflow-hidden bg-beige-bg">
               <img
                 src={property.image_url}
                 alt={property.title}
@@ -62,7 +62,7 @@ function PropertyDetail() {
           </div>
           <aside className="lg:col-span-4 lg:sticky lg:top-32 self-start">
             {property.badge && (
-              <span className="inline-block bg-gold text-navy px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] mb-5">
+              <span className="inline-block bg-accent-green text-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] mb-5">
                 {property.badge}
               </span>
             )}
@@ -80,7 +80,7 @@ function PropertyDetail() {
             </div>
             <Link
               to="/contact"
-              className="block text-center px-8 py-4 bg-navy text-white font-bold uppercase text-[11px] tracking-[0.22em] hover:bg-gold hover:text-navy transition-colors"
+              className="block text-center px-8 py-4 bg-primary-green text-white font-bold uppercase text-[11px] tracking-[0.22em] hover:bg-dark-hover-green hover:text-white transition-colors"
             >
               Enquire About This Plot
             </Link>
@@ -100,12 +100,12 @@ function PropertyDetail() {
         </div>
         <div className="lg:col-span-5">
           {property.features && property.features.length > 0 && (
-            <div className="bg-mist p-10">
+            <div className="bg-beige-bg p-10">
               <span className="eyebrow">Features</span>
               <ul className="mt-6 space-y-4">
                 {property.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
-                    <Check className="size-4 text-gold mt-1.5 shrink-0" />
+                    <Check className="size-4 text-accent-green mt-1.5 shrink-0" />
                     <span>{f}</span>
                   </li>
                 ))}

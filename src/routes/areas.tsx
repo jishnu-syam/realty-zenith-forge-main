@@ -21,11 +21,11 @@ function AreasPage() {
   const { data: areas } = useSuspenseQuery(areasQuery);
   return (
     <>
-      <section className="pt-40 pb-16 bg-navy text-white">
+      <section className="pt-40 pb-16 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Areas We Serve</span>
+          <span className="eyebrow text-accent-green">Areas We Serve</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.05] max-w-3xl">
-            Anchored in <span className="italic text-gold">Kochi</span>.
+            Anchored in <span className="italic text-accent-green">Kochi</span>.
           </h1>
         </div>
       </section>
@@ -52,7 +52,7 @@ function AreasPage() {
                 <ul className="space-y-3">
                   {a.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-3">
-                      <Check className="size-4 text-gold mt-1.5" />
+                      <Check className="size-4 text-accent-green mt-1.5" />
                       <span>{h}</span>
                     </li>
                   ))}

@@ -55,11 +55,11 @@ function ContactPage() {
 
   return (
     <>
-      <section className="pt-40 pb-16 bg-navy text-white">
+      <section className="pt-40 pb-16 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Start a Conversation</span>
+          <span className="eyebrow text-accent-green">Start a Conversation</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.05] max-w-3xl">
-            Speak with an <span className="italic text-gold">advisor</span>.
+            Speak with an <span className="italic text-accent-green">advisor</span>.
           </h1>
         </div>
       </section>
@@ -87,7 +87,7 @@ function ContactPage() {
         </div>
 
         <form
-          className="lg:col-span-7 bg-mist p-8 md:p-12 space-y-5"
+          className="lg:col-span-7 bg-beige-bg p-8 md:p-12 space-y-5"
           onSubmit={(e) => {
             e.preventDefault();
             mutation.mutate(form);
@@ -99,7 +99,7 @@ function ContactPage() {
                 required maxLength={100}
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-gold"
+                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-accent-green"
               />
             </Field>
             <Field label="Email" required>
@@ -107,7 +107,7 @@ function ContactPage() {
                 required type="email" maxLength={254}
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-gold"
+                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-accent-green"
               />
             </Field>
             <Field label="Phone">
@@ -115,7 +115,7 @@ function ContactPage() {
                 maxLength={30}
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-gold"
+                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-accent-green"
               />
             </Field>
             <Field label="Subject">
@@ -123,7 +123,7 @@ function ContactPage() {
                 maxLength={200}
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-gold"
+                className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-accent-green"
               />
             </Field>
           </div>
@@ -132,13 +132,13 @@ function ContactPage() {
               required maxLength={2000} rows={6}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-gold resize-none"
+              className="w-full bg-background border border-border px-4 py-3.5 focus:outline-none focus:border-accent-green resize-none"
             />
           </Field>
           <button
             type="submit"
             disabled={mutation.isPending}
-            className="w-full md:w-auto px-10 py-4 bg-navy text-white font-bold uppercase text-[11px] tracking-[0.22em] hover:bg-gold hover:text-navy transition-colors disabled:opacity-60"
+            className="w-full md:w-auto px-10 py-4 bg-primary-green text-white font-bold uppercase text-[11px] tracking-[0.22em] hover:bg-dark-hover-green hover:text-white transition-colors disabled:opacity-60"
           >
             {mutation.isPending ? "Sending..." : "Send Message"}
           </button>
@@ -160,7 +160,7 @@ function ContactPage() {
 function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex gap-4 items-start">
-      <div className="size-11 shrink-0 bg-navy text-gold flex items-center justify-center">{icon}</div>
+      <div className="size-11 shrink-0 bg-primary-green text-accent-green flex items-center justify-center">{icon}</div>
       <div>
         <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{label}</p>
         <p className="font-display text-lg mt-1">{value}</p>
@@ -172,8 +172,8 @@ function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string;
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="block text-[10px] font-bold uppercase tracking-[0.22em] text-navy mb-2">
-        {label} {required && <span className="text-gold">*</span>}
+      <span className="block text-[10px] font-bold uppercase tracking-[0.22em] text-primary-heading-text mb-2">
+        {label} {required && <span className="text-accent-green">*</span>}
       </span>
       {children}
     </label>

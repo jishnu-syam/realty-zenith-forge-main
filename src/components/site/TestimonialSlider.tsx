@@ -45,7 +45,7 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
             key={t.id}
             className="snap-start shrink-0 w-[88%] sm:w-[420px] bg-white/5 border border-white/10 p-8 md:p-10 backdrop-blur-sm flex flex-col"
           >
-            <Quote className="size-8 text-gold/70 mb-6" strokeWidth={1.5} />
+            <Quote className="size-8 text-accent-green/70 mb-6" strokeWidth={1.5} />
             <p className="font-display italic text-lg md:text-xl text-white leading-relaxed mb-8 flex-1">
               "{t.quote}"
             </p>
@@ -61,7 +61,7 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
               <div>
                 <p className="font-bold text-white text-sm">{t.author_name}</p>
                 {t.author_role && (
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold/80 mt-0.5">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-accent-green/80 mt-0.5">
                     {t.author_role}
                   </p>
                 )}
@@ -77,7 +77,7 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
           onClick={() => scrollBy(-1)}
           disabled={!canPrev}
           aria-label="Previous testimonial"
-          className="size-12 rounded-full border border-white/20 text-white/80 flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white hover:text-navy transition-colors"
+          className="size-12 rounded-full border border-white/20 text-white/80 flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white hover:text-primary-green transition-colors"
         >
           <ChevronLeft className="size-5" />
         </button>
@@ -85,7 +85,7 @@ export function TestimonialSlider({ items }: { items: Testimonial[] }) {
           onClick={() => scrollBy(1)}
           disabled={!canNext}
           aria-label="Next testimonial"
-          className="size-12 rounded-full border border-gold bg-gold/0 text-gold flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gold hover:text-navy transition-colors"
+          className="size-12 rounded-full border border-accent-green bg-accent-green/0 text-accent-green flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:bg-accent-green hover:text-white transition-colors"
         >
           <ChevronRight className="size-5" />
         </button>

@@ -58,15 +58,15 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-navy px-6 py-20">
+    <div className="min-h-screen flex items-center justify-center bg-primary-green px-6 py-20">
       <div className="w-full max-w-md bg-background p-10">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <span className="flex h-12 w-12 items-center justify-center bg-navy text-gold font-display text-xl font-bold">
+            <span className="flex h-12 w-12 items-center justify-center bg-primary-green text-accent-green font-display text-xl font-bold">
               C
             </span>
           </div>
-          <h1 className="font-display text-3xl text-navy">Capital Realty</h1>
+          <h1 className="font-display text-3xl text-primary-heading-text">Capital Realty</h1>
           <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mt-2">
             Staff Portal
           </p>
@@ -82,7 +82,7 @@ function AuthPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-border px-4 py-3 focus:outline-none focus:border-gold"
+              className="w-full border border-border px-4 py-3 focus:outline-none focus:border-accent-green"
             />
           </label>
           <label className="block">
@@ -95,13 +95,13 @@ function AuthPage() {
               minLength={6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-border px-4 py-3 focus:outline-none focus:border-gold"
+              className="w-full border border-border px-4 py-3 focus:outline-none focus:border-accent-green"
             />
           </label>
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-6 py-3.5 bg-navy text-white text-[11px] font-bold uppercase tracking-[0.22em] hover:bg-gold hover:text-navy transition-colors disabled:opacity-60"
+            className="w-full px-6 py-3.5 bg-primary-green text-white text-[11px] font-bold uppercase tracking-[0.22em] hover:bg-dark-hover-green hover:text-white transition-colors disabled:opacity-60"
           >
             {loading ? "Please wait..." : mode === "signin" ? "Sign In" : "Create Account"}
           </button>
@@ -111,7 +111,7 @@ function AuthPage() {
           {mode === "signin" ? "Need an account?" : "Already have an account?"}{" "}
           <button
             onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-            className="text-gold underline"
+            className="text-accent-green underline"
           >
             {mode === "signin" ? "Create one" : "Sign in"}
           </button>

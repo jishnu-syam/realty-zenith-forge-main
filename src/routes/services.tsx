@@ -25,11 +25,11 @@ function ServicesPage() {
   const { data: services } = useSuspenseQuery(servicesQuery);
   return (
     <>
-      <section className="pt-40 pb-20 bg-navy text-white">
+      <section className="pt-40 pb-20 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Our Disciplines</span>
+          <span className="eyebrow text-accent-green">Our Disciplines</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl max-w-3xl leading-[1.05]">
-            Land services <span className="italic text-gold">engineered</span> for permanence.
+            Land services <span className="italic text-accent-green">engineered</span> for permanence.
           </h1>
           <p className="mt-8 text-lg text-white/70 max-w-2xl leading-relaxed">
             Six disciplines, delivered to an institutional standard. Each one independently
@@ -45,8 +45,8 @@ function ServicesPage() {
             return (
               <div key={s.id} className="bg-background p-10 lg:p-14 group">
                 <div className="flex items-start justify-between mb-8">
-                  <Icon className="size-8 text-gold" strokeWidth={1.4} />
-                  <span className="font-display text-3xl text-navy/15">0{i + 1}</span>
+                  <Icon className="size-8 text-accent-green" strokeWidth={1.4} />
+                  <span className="font-display text-3xl text-primary-green/15">0{i + 1}</span>
                 </div>
                 <h2 className="font-display text-3xl mb-4">{s.title}</h2>
                 <p className="text-muted-foreground leading-relaxed">{s.description}</p>
@@ -56,14 +56,14 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-mist text-center">
+      <section className="section-padding bg-beige-bg text-center">
         <div className="container-wide">
           <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto leading-tight">
-            Explore <span className="italic text-gold">construction-ready</span> plots.
+            Explore <span className="italic text-accent-green">construction-ready</span> plots.
           </h2>
           <Link
             to="/properties"
-            className="mt-10 inline-flex items-center gap-3 px-10 py-4 bg-navy text-white text-[11px] font-bold uppercase tracking-[0.22em] hover:bg-gold hover:text-navy transition-colors"
+            className="mt-10 inline-flex items-center gap-3 px-10 py-4 bg-primary-green text-white text-[11px] font-bold uppercase tracking-[0.22em] hover:bg-dark-hover-green hover:text-white transition-colors"
           >
             View Portfolio <ArrowRight className="size-4" />
           </Link>

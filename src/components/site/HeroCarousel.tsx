@@ -33,8 +33,8 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
               alt=""
               className={`h-full w-full object-cover ${i === active ? "animate-slow-zoom" : ""}`}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/55 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-green/85 via-primary-green/55 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-green/60 via-transparent to-transparent" />
           </div>
         ))}
       </div>
@@ -44,8 +44,8 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
         <div key={current.id} className="max-w-2xl">
           {current.eyebrow && (
             <div className="animate-fade-up flex items-center gap-4 mb-6">
-              <span className="block h-px w-12 bg-gold" />
-              <span className="text-gold font-semibold tracking-[0.28em] uppercase text-[11px]">
+              <span className="block h-px w-12 bg-accent-green" />
+              <span className="text-accent-green font-semibold tracking-[0.28em] uppercase text-[11px]">
                 {current.eyebrow}
               </span>
             </div>
@@ -71,14 +71,14 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             {current.cta_label && current.cta_href && (
               <Link
                 to={current.cta_href}
-                className="px-8 py-4 bg-gold text-navy font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white transition-colors"
+                className="px-8 py-4 bg-accent-green text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-primary-green transition-colors"
               >
                 {current.cta_label}
               </Link>
             )}
             <Link
               to="/contact"
-              className="px-8 py-4 border border-white/30 text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-navy transition-all"
+              className="px-8 py-4 border border-white/30 text-white font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-white hover:text-primary-green transition-all"
             >
               Speak with an Advisor
             </Link>
@@ -95,7 +95,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 key={s.id}
                 onClick={() => setActive(i)}
                 className={`h-px transition-all duration-500 ${
-                  i === active ? "bg-gold w-12" : "bg-white/40 w-6 hover:bg-white/70"
+                  i === active ? "bg-accent-green w-12" : "bg-white/40 w-6 hover:bg-white/70"
                 }`}
                 aria-label={`Slide ${i + 1}`}
               />
@@ -104,14 +104,14 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           <div className="flex gap-2">
             <button
               onClick={() => setActive((i) => (i - 1 + total) % total)}
-              className="size-10 border border-white/30 text-white/80 hover:bg-white hover:text-navy transition-colors flex items-center justify-center"
+              className="size-10 border border-white/30 text-white/80 hover:bg-white hover:text-primary-green transition-colors flex items-center justify-center"
               aria-label="Previous"
             >
               <ChevronLeft className="size-4" />
             </button>
             <button
               onClick={() => setActive((i) => (i + 1) % total)}
-              className="size-10 border border-white/30 text-white/80 hover:bg-white hover:text-navy transition-colors flex items-center justify-center"
+              className="size-10 border border-white/30 text-white/80 hover:bg-white hover:text-primary-green transition-colors flex items-center justify-center"
               aria-label="Next"
             >
               <ChevronRight className="size-4" />

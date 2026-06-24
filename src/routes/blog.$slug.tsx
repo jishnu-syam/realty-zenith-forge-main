@@ -22,7 +22,7 @@ export const Route = createFileRoute("/blog/$slug")({
     <div className="min-h-screen flex items-center justify-center text-center px-6 pt-20">
       <div>
         <h1 className="font-display text-4xl">Article not found</h1>
-        <Link to="/blog" className="mt-6 inline-flex text-gold underline">
+        <Link to="/blog" className="mt-6 inline-flex text-accent-green underline">
           ← Back to insights
         </Link>
       </div>
@@ -45,7 +45,7 @@ function BlogPost() {
       <div className="container-wide max-w-3xl">
         <Link
           to="/blog"
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-gold mb-10"
+          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-accent-green mb-10"
         >
           <ArrowLeft className="size-4" /> Insights
         </Link>

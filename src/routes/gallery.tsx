@@ -20,11 +20,11 @@ function GalleryPage() {
   const { data: images } = useSuspenseQuery(galleryQuery);
   return (
     <>
-      <section className="pt-40 pb-16 bg-navy text-white">
+      <section className="pt-40 pb-16 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Visual Portfolio</span>
+          <span className="eyebrow text-accent-green">Visual Portfolio</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.05]">
-            <span className="italic text-gold">Land</span>, in detail.
+            <span className="italic text-accent-green">Land</span>, in detail.
           </h1>
         </div>
       </section>
@@ -45,7 +45,7 @@ function GalleryPage() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {img.caption && (
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent p-5 text-xs uppercase tracking-[0.18em] text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary-green/80 to-transparent p-5 text-xs uppercase tracking-[0.18em] text-white opacity-0 group-hover:opacity-100 transition-opacity">
                   {img.caption}
                 </figcaption>
               )}

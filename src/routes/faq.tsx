@@ -23,11 +23,11 @@ function FaqPage() {
   const { data: faqs } = useSuspenseQuery(faqsQuery);
   return (
     <>
-      <section className="pt-40 pb-16 bg-navy text-white">
+      <section className="pt-40 pb-16 bg-primary-green text-white">
         <div className="container-wide">
-          <span className="eyebrow text-gold">Frequently Asked</span>
+          <span className="eyebrow text-accent-green">Frequently Asked</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl leading-[1.05]">
-            Questions, <span className="italic text-gold">answered</span>.
+            Questions, <span className="italic text-accent-green">answered</span>.
           </h1>
         </div>
       </section>
@@ -38,9 +38,9 @@ function FaqPage() {
             <AccordionItem
               key={f.id}
               value={f.id}
-              className="border border-border bg-background data-[state=open]:bg-mist transition-colors"
+              className="border border-border bg-background data-[state=open]:bg-beige-bg transition-colors"
             >
-              <AccordionTrigger className="px-6 py-5 text-left font-display text-lg hover:no-underline hover:text-gold">
+              <AccordionTrigger className="px-6 py-5 text-left font-display text-lg hover:no-underline hover:text-accent-green">
                 {f.question}
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 text-base leading-relaxed text-muted-foreground">

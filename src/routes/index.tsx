@@ -84,7 +84,7 @@ function HomePage() {
           <div className="lg:col-span-5">
             <span className="eyebrow">About Capital Realty</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-5 leading-[1.05] tracking-tight">
-              A measured approach to <span className="italic text-gold">Kerala land</span>.
+              A measured approach to <span className="italic text-accent-green">Kerala land</span>.
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-6 text-lg leading-relaxed text-muted-foreground">
@@ -101,7 +101,7 @@ function HomePage() {
             </p>
             <Link
               to="/about"
-              className="inline-flex items-center gap-3 text-navy font-bold uppercase text-[11px] tracking-[0.22em] pb-2 border-b border-navy/20 hover:text-gold hover:border-gold transition-colors"
+              className="inline-flex items-center gap-3 text-primary-green font-bold uppercase text-[11px] tracking-[0.22em] pb-2 border-b border-primary-green/20 hover:text-accent-green hover:border-accent-green transition-colors"
             >
               Our Philosophy <ArrowRight className="size-4" />
             </Link>
@@ -110,7 +110,7 @@ function HomePage() {
       </section>
 
       {/* Services */}
-      <section id="services" className="section-padding bg-mist">
+      <section id="services" className="section-padding bg-beige-bg">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Our Disciplines"
@@ -123,11 +123,11 @@ function HomePage() {
               return (
                 <div
                   key={s.id}
-                  className="bg-background p-10 group hover:bg-navy hover:text-white transition-colors duration-300"
+                  className="bg-background p-10 group hover:bg-primary-green hover:text-white transition-colors duration-300"
                 >
                   <div className="mb-8 flex items-center justify-between">
-                    <Icon className="size-7 text-gold" strokeWidth={1.5} />
-                    <span className="font-display text-2xl text-navy/15 group-hover:text-white/20 transition-colors">
+                    <Icon className="size-7 text-accent-green" strokeWidth={1.5} />
+                    <span className="font-display text-2xl text-primary-green/15 group-hover:text-white/20 transition-colors">
                       0{services.indexOf(s) + 1}
                     </span>
                   </div>
@@ -154,11 +154,11 @@ function HomePage() {
             {PROCESS_STEPS.map((s, i) => (
               <div
                 key={s.num}
-                className={`relative p-8 lg:p-10 bg-mist border-b-4 ${
-                  i === 0 ? "border-gold" : "border-navy"
+                className={`relative p-8 lg:p-10 bg-beige-bg border-b-4 ${
+                  i === 0 ? "border-accent-green" : "border-primary-green"
                 } group hover:-translate-y-1 transition-transform duration-300`}
               >
-                <span className="font-display text-5xl text-navy/15 mb-6 block">{s.num}</span>
+                <span className="font-display text-5xl text-primary-green/15 mb-6 block">{s.num}</span>
                 <h4 className="font-bold uppercase tracking-[0.18em] text-xs mb-4">
                   {s.title}
                 </h4>
@@ -170,12 +170,12 @@ function HomePage() {
       </section>
 
       {/* Featured properties */}
-      <section className="section-padding bg-navy text-white">
+      <section className="section-padding bg-primary-green text-white">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <span className="eyebrow text-gold">Exclusive Opportunities</span>
+            <span className="eyebrow text-accent-green">Exclusive Opportunities</span>
             <h2 className="font-display text-4xl md:text-6xl mt-5 leading-[1.05] tracking-tight">
-              Curated <span className="italic text-gold">investment</span> plots.
+              Curated <span className="italic text-accent-green">investment</span> plots.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -186,7 +186,7 @@ function HomePage() {
           <div className="mt-16 text-center">
             <Link
               to="/properties"
-              className="inline-flex items-center gap-3 px-10 py-4 border border-gold/40 text-gold font-bold uppercase text-[11px] tracking-[0.22em] hover:bg-gold hover:text-navy transition-colors"
+              className="inline-flex items-center gap-3 px-10 py-4 border border-accent-green/40 text-accent-green font-bold uppercase text-[11px] tracking-[0.22em] hover:bg-accent-green hover:text-white transition-colors"
             >
               Explore Full Inventory <ArrowRight className="size-4" />
             </Link>
@@ -199,7 +199,7 @@ function HomePage() {
         <div className="container-wide grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {WHY_CHOOSE.map((w) => (
             <div key={w.label}>
-              <p className="font-display text-5xl md:text-6xl text-navy mb-2">
+              <p className="font-display text-5xl md:text-6xl text-primary-green mb-2">
                 {w.stat}
               </p>
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
@@ -211,12 +211,12 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-navy text-white">
+      <section className="section-padding bg-primary-green text-white">
         <div className="container-wide">
           <div className="flex flex-wrap justify-between items-end gap-8 mb-12">
             <SectionHeading
               eyebrow="Investor Perspectives"
-              title={<>Voices of <span className="italic text-gold">confidence</span>.</>}
+              title={<>Voices of <span className="italic text-accent-green">confidence</span>.</>}
               inverted
             />
           </div>
@@ -235,7 +235,7 @@ function HomePage() {
             />
             <Link
               to="/areas"
-              className="text-navy font-bold uppercase text-[11px] tracking-[0.22em] pb-1 border-b border-navy/20 hover:text-gold hover:border-gold transition-colors"
+              className="text-primary-green font-bold uppercase text-[11px] tracking-[0.22em] pb-1 border-b border-primary-green/20 hover:text-accent-green hover:border-accent-green transition-colors"
             >
               All Areas →
             </Link>
@@ -252,7 +252,7 @@ function HomePage() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-green/70 via-primary-green/10 to-transparent" />
                   <h3 className="absolute bottom-5 left-5 font-display text-2xl text-white">
                     {a.name}
                   </h3>
@@ -270,7 +270,7 @@ function HomePage() {
 
       {/* Blog teaser */}
       {blog.length > 0 && (
-        <section className="section-padding bg-mist">
+        <section className="section-padding bg-beige-bg">
           <div className="container-wide">
             <div className="flex flex-wrap justify-between items-end gap-6 mb-12">
               <SectionHeading
@@ -279,7 +279,7 @@ function HomePage() {
               />
               <Link
                 to="/blog"
-                className="text-navy font-bold uppercase text-[11px] tracking-[0.22em] pb-1 border-b border-navy/20 hover:text-gold hover:border-gold transition-colors"
+                className="text-primary-green font-bold uppercase text-[11px] tracking-[0.22em] pb-1 border-b border-primary-green/20 hover:text-accent-green hover:border-accent-green transition-colors"
               >
                 All Insights →
               </Link>
@@ -305,7 +305,7 @@ function HomePage() {
                   {post.category && (
                     <span className="eyebrow mb-3 block">{post.category}</span>
                   )}
-                  <h3 className="font-display text-2xl md:text-3xl text-navy group-hover:text-gold transition-colors mb-3">
+                  <h3 className="font-display text-2xl md:text-3xl text-primary-heading-text group-hover:text-accent-green transition-colors mb-3">
                     {post.title}
                   </h3>
                   {post.excerpt && (

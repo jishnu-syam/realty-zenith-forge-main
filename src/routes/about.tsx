@@ -19,11 +19,11 @@ function AboutPage() {
     <>
       <section className="relative h-[60vh] min-h-[480px] flex items-end pb-16 pt-32 overflow-hidden">
         <img src={heroImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-navy/65" />
+        <div className="absolute inset-0 bg-primary-green/65" />
         <div className="container-wide relative">
-          <span className="eyebrow text-gold">About Capital Realty</span>
+          <span className="eyebrow text-accent-green">About Capital Realty</span>
           <h1 className="mt-5 font-display text-5xl md:text-7xl text-white leading-[1.05] max-w-3xl">
-            Land, considered <span className="italic text-gold">carefully</span>.
+            Land, considered <span className="italic text-accent-green">carefully</span>.
           </h1>
         </div>
       </section>
@@ -56,7 +56,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-mist">
+      <section className="section-padding bg-beige-bg">
         <div className="container-wide grid md:grid-cols-3 gap-10">
           {[
             { t: "Vision", b: "To be the most trusted name in Kerala land — the firm clients turn to first when permanence matters." },
@@ -64,7 +64,7 @@ function AboutPage() {
             { t: "Values", b: "Discretion. Diligence. Long-term thinking. A bias for substance over presentation in everything we deliver." },
           ].map((v) => (
             <div key={v.t} className="bg-background p-10">
-              <span className="gold-rule mb-6" />
+              <span className="green-rule mb-6" />
               <h3 className="font-display text-2xl mb-4">{v.t}</h3>
               <p className="text-muted-foreground leading-relaxed">{v.b}</p>
             </div>
@@ -74,11 +74,11 @@ function AboutPage() {
 
       <section className="section-padding container-wide text-center">
         <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto leading-tight">
-          Ready to explore a <span className="italic text-gold">Capital Realty</span> plot?
+          Ready to explore a <span className="italic text-accent-green">Capital Realty</span> plot?
         </h2>
         <Link
           to="/contact"
-          className="mt-10 inline-flex px-10 py-4 bg-navy text-white text-[11px] font-bold uppercase tracking-[0.22em] hover:bg-gold hover:text-navy transition-colors"
+          className="mt-10 inline-flex px-10 py-4 bg-primary-green text-white text-[11px] font-bold uppercase tracking-[0.22em] hover:bg-dark-hover-green hover:text-white transition-colors"
         >
           Speak with an Advisor
         </Link>

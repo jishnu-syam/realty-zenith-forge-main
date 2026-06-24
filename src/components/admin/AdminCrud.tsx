@@ -108,10 +108,10 @@ export function AdminCrud({
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h2 className="font-display text-2xl text-navy">{title}</h2>
+        <h2 className="font-display text-2xl text-primary-heading-text">{title}</h2>
         <button
           onClick={() => setEditing({})}
-          className="inline-flex items-center gap-2 bg-navy text-white px-4 py-2.5 text-xs font-bold uppercase tracking-[0.18em] hover:bg-gold hover:text-navy transition-colors"
+          className="inline-flex items-center gap-2 bg-primary-green text-white px-4 py-2.5 text-xs font-bold uppercase tracking-[0.18em] hover:bg-dark-hover-green hover:text-white transition-colors"
         >
           <Plus className="size-4" /> Add
         </button>
@@ -123,7 +123,7 @@ export function AdminCrud({
       {list.data && (
         <div className="border border-border overflow-hidden">
           <table className="w-full text-sm">
-            <thead className="bg-mist">
+            <thead className="bg-beige-bg">
               <tr>
                 {visibleFields.map((f) => (
                   <th key={f.key} className="text-left px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]">
@@ -144,7 +144,7 @@ export function AdminCrud({
                   <td className="px-4 py-3 text-right">
                     <button
                       onClick={() => setEditing(row)}
-                      className="inline-flex items-center gap-1 text-navy hover:text-gold mr-3"
+                      className="inline-flex items-center gap-1 text-primary-green hover:text-accent-green mr-3"
                     >
                       <Edit2 className="size-3.5" /> Edit
                     </button>
@@ -222,7 +222,7 @@ function EditorDrawer({
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end" role="dialog">
-      <div className="absolute inset-0 bg-navy/40" onClick={onClose} />
+      <div className="absolute inset-0 bg-primary-green/40" onClick={onClose} />
       <div className="relative w-full max-w-2xl bg-background h-full overflow-y-auto shadow-2xl">
         <div className="sticky top-0 bg-background border-b border-border px-8 py-5 flex items-center justify-between z-10">
           <h3 className="font-display text-xl">{row.id ? "Edit Entry" : "New Entry"}</h3>
@@ -238,7 +238,7 @@ function EditorDrawer({
           {fields.map((f) => (
             <label key={f.key} className="block">
               <span className="text-[10px] font-bold uppercase tracking-[0.22em] mb-2 block">
-                {f.label} {f.required && <span className="text-gold">*</span>}
+                {f.label} {f.required && <span className="text-accent-green">*</span>}
               </span>
               {f.type === "textarea" || f.type === "json" ? (
                 <textarea
@@ -247,13 +247,13 @@ function EditorDrawer({
                   placeholder={f.placeholder}
                   value={(state[f.key] as string) ?? ""}
                   onChange={(e) => setField(f.key, e.target.value)}
-                  className="w-full border border-border px-4 py-3 focus:outline-none focus:border-gold font-mono text-sm"
+                  className="w-full border border-border px-4 py-3 focus:outline-none focus:border-accent-green font-mono text-sm"
                 />
               ) : f.type === "boolean" ? (
                 <select
                   value={state[f.key] ? "true" : "false"}
                   onChange={(e) => setField(f.key, e.target.value === "true")}
-                  className="w-full border border-border px-4 py-3 focus:outline-none focus:border-gold"
+                  className="w-full border border-border px-4 py-3 focus:outline-none focus:border-accent-green"
                 >
                   <option value="true">Yes</option>
                   <option value="false">No</option>
@@ -265,7 +265,7 @@ function EditorDrawer({
                   placeholder={f.placeholder}
                   value={(state[f.key] as string) ?? ""}
                   onChange={(e) => setField(f.key, e.target.value)}
-                  className="w-full border border-border px-4 py-3 focus:outline-none focus:border-gold"
+                  className="w-full border border-border px-4 py-3 focus:outline-none focus:border-accent-green"
                 />
               )}
               {f.type === "tags" && (
@@ -276,7 +276,7 @@ function EditorDrawer({
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center gap-2 bg-navy text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] hover:bg-gold hover:text-navy transition-colors disabled:opacity-60"
+            className="inline-flex items-center gap-2 bg-primary-green text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] hover:bg-dark-hover-green hover:text-white transition-colors disabled:opacity-60"
           >
             <Save className="size-4" /> {saving ? "Saving..." : "Save"}
           </button>

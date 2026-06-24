@@ -187,16 +187,16 @@ function AdminPage() {
   const hasRole = roles.data?.includes("admin") || roles.data?.includes("editor");
 
   return (
-    <div className="min-h-screen bg-mist flex">
+    <div className="min-h-screen bg-beige-bg flex">
       {/* Sidebar */}
-      <aside className="w-72 bg-navy text-white p-8 sticky top-0 self-start h-screen overflow-y-auto">
+      <aside className="w-72 bg-primary-green text-white p-8 sticky top-0 self-start h-screen overflow-y-auto">
         <Link to="/" className="flex items-center gap-2 mb-12">
-          <span className="flex h-9 w-9 items-center justify-center bg-gold text-navy font-display text-lg font-bold">
+          <span className="flex h-9 w-9 items-center justify-center bg-accent-green text-white font-display text-lg font-bold">
             C
           </span>
           <span className="font-display text-lg font-bold">Capital Realty</span>
         </Link>
-        <p className="eyebrow text-gold mb-6">Content</p>
+        <p className="eyebrow text-accent-green mb-6">Content</p>
         <nav className="space-y-1">
           {SECTIONS.map((s) => (
             <button
@@ -204,7 +204,7 @@ function AdminPage() {
               onClick={() => setSection(s.id)}
               className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
                 section === s.id
-                  ? "bg-white/10 text-gold"
+                  ? "bg-white/10 text-accent-green"
                   : "text-white/70 hover:text-white hover:bg-white/5"
               }`}
             >
@@ -215,13 +215,13 @@ function AdminPage() {
         <div className="mt-12 pt-8 border-t border-white/10 space-y-3">
           <Link
             to="/"
-            className="block text-xs uppercase tracking-[0.18em] text-white/60 hover:text-gold"
+            className="block text-xs uppercase tracking-[0.18em] text-white/60 hover:text-accent-green"
           >
             View Site →
           </Link>
           <button
             onClick={signOut}
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/60 hover:text-gold"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/60 hover:text-accent-green"
           >
             <LogOut className="size-3.5" /> Sign Out
           </button>
@@ -231,14 +231,14 @@ function AdminPage() {
       {/* Content */}
       <div className="flex-1 p-10">
         {!hasRole && !roles.isLoading && (
-          <div className="mb-8 p-5 bg-gold/10 border border-gold/30 flex gap-3 items-start">
-            <ShieldAlert className="size-5 text-gold shrink-0 mt-0.5" />
+          <div className="mb-8 p-5 bg-accent-green/10 border border-accent-green/30 flex gap-3 items-start">
+            <ShieldAlert className="size-5 text-accent-green shrink-0 mt-0.5" />
             <div className="text-sm">
-              <p className="font-bold text-navy mb-1">No editor role assigned</p>
+              <p className="font-bold text-primary-heading-text mb-1">No editor role assigned</p>
               <p className="text-muted-foreground">
                 You're signed in but haven't been granted editor or admin permissions. Saves
                 will fail until a workspace admin grants you a role in the{" "}
-                <code className="bg-mist px-1.5 py-0.5">user_roles</code> table.
+                <code className="bg-beige-bg px-1.5 py-0.5">user_roles</code> table.
               </p>
             </div>
           </div>
