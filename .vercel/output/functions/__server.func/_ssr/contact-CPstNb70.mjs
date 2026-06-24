@@ -1,12 +1,12 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { n as supabase } from "./client-CLMpBxHv.mjs";
+import { t as supabase } from "./client-By7Wti3p.mjs";
 import { i as useQuery, t as useMutation } from "../_libs/tanstack__react-query.mjs";
 import { c as Phone, d as Mail, m as Clock, u as MapPin } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { d as siteSettingsQuery } from "./queries-De83JLO2.mjs";
+import { d as siteSettingsQuery } from "./queries-C5ESjNyL.mjs";
 import { n as objectType, r as stringType, t as literalType } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/contact-CWRS_inZ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/contact-CPstNb70.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var schema = objectType({

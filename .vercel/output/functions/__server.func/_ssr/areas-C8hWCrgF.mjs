@@ -1,8 +1,8 @@
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
 import { v as Check } from "../_libs/lucide-react.mjs";
-import { t as areasQuery } from "./queries-De83JLO2.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/areas-BvhtOQ7l.js
+import { t as areasQuery } from "./queries-C5ESjNyL.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/areas-C8hWCrgF.js
 var import_jsx_runtime = require_jsx_runtime();
 function AreasPage() {
 	const { data: areas } = useSuspenseQuery(areasQuery);

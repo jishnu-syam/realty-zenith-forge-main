@@ -1,8 +1,8 @@
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
-import { r as blogQuery } from "./queries-De83JLO2.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/blog.index-D7XmdzNT.js
+import { r as blogQuery } from "./queries-C5ESjNyL.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/blog.index-DJ997-u6.js
 var import_jsx_runtime = require_jsx_runtime();
 function BlogIndex() {
 	const { data: posts } = useSuspenseQuery(blogQuery);

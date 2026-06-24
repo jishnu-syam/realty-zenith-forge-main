@@ -1,8 +1,8 @@
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { r as useSuspenseQuery } from "../_libs/tanstack__react-query.mjs";
-import { c as propertiesQuery } from "./queries-De83JLO2.mjs";
+import { c as propertiesQuery } from "./queries-C5ESjNyL.mjs";
 import { t as PropertyCard } from "./PropertyCard-B1pWci9y.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/properties.index-Dsf4BTbj.js
+//#region node_modules/.nitro/vite/services/ssr/assets/properties.index-JtKvTa0S.js
 var import_jsx_runtime = require_jsx_runtime();
 function PropertiesPage() {
 	const { data: properties } = useSuspenseQuery(propertiesQuery);
