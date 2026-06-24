@@ -1,11 +1,11 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { F as useNavigate, g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as supabase$1 } from "./client-By7Wti3p.mjs";
+import { n as supabase$1 } from "./client-CLMpBxHv.mjs";
 import { i as useQuery, o as useQueryClient, t as useMutation } from "../_libs/tanstack__react-query.mjs";
 import { C as Pen, a as Save, f as LogOut, i as ShieldAlert, n as Trash2, s as Plus, t as X } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-BL-AF0cK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-r9Pzzpsf.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var supabase = supabase$1;

@@ -47,6 +47,18 @@ export default defineConfig({
       },
     },
   },
+  ssr: {
+    noExternal: [
+      "tslib",
+      "@supabase/supabase-js",
+      "@supabase/auth-js",
+      "@supabase/functions-js",
+      "@supabase/postgrest-js",
+      "@supabase/storage-js",
+      "@supabase/realtime-js",
+      "@supabase/phoenix"
+    ],
+  },
   plugins: [
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
@@ -62,6 +74,18 @@ export default defineConfig({
     }),
     nitro({
       preset: "vercel",
+      externals: {
+        inline: [
+          "tslib",
+          "@supabase/supabase-js",
+          "@supabase/auth-js",
+          "@supabase/functions-js",
+          "@supabase/postgrest-js",
+          "@supabase/storage-js",
+          "@supabase/realtime-js",
+          "@supabase/phoenix"
+        ],
+      },
     }),
     viteReact(),
   ],

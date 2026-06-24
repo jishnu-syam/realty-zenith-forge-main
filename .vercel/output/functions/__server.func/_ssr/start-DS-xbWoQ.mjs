@@ -1,6 +1,6 @@
-import { t as supabase } from "./client-By7Wti3p.mjs";
+import { n as supabase } from "./client-CLMpBxHv.mjs";
 import { n as createMiddleware, t as createStart } from "./ssr.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/start-B6QMC9tf.js
+//#region node_modules/.nitro/vite/services/ssr/assets/start-DS-xbWoQ.js
 function renderErrorPage() {
 	return `<!doctype html>
 <html lang="en">

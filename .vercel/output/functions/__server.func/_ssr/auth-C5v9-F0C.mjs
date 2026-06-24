@@ -1,9 +1,9 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { F as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as supabase } from "./client-By7Wti3p.mjs";
+import { n as supabase } from "./client-CLMpBxHv.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/auth-DfiQ1BkP.js
+//#region node_modules/.nitro/vite/services/ssr/assets/auth-C5v9-F0C.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AuthPage() {
